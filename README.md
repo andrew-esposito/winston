@@ -48,7 +48,7 @@ There are two different ways to use winston: directly via the default logger, or
 * [Run Tests](#run-tests)
 
 
-## Logging
+## 1. Logging
 
 ### Using the Default Logger
 The default logger is accessible through the winston module directly. Any method that you could call on an instance of a logger is available on the default logger:
@@ -148,7 +148,7 @@ var infoFile = logger.transports[0];
 logger.remove(infoFile);
 ```
 
-## Profiling
+## 2. Profiling
 In addition to logging messages and metadata, winston also has a simple profiling mechanism implemented for any logger:
 
 ``` js
@@ -207,7 +207,7 @@ logger.log('info', 'test message', 'first', 'second', {number: 123}, function(){
 
 
 
-## Querying Logs
+## 3. Querying Logs
 Winston supports querying of logs with Loggly-like options. [See Loggly Search API](http://wiki.loggly.com/retrieve_events#optional).
 Specifically: `File`, `Couchdb`, `Redis`, `Loggly`, `Nssocket`, and `Http`.
 
@@ -233,7 +233,7 @@ Specifically: `File`, `Couchdb`, `Redis`, `Loggly`, `Nssocket`, and `Http`.
   });
 ```
 
-## Streaming Logs
+## 4. Streaming Logs
 Streaming allows you to stream your logs back from your chosen transport.
 
 ``` js
@@ -245,7 +245,7 @@ Streaming allows you to stream your logs back from your chosen transport.
   });
 ```
 
-## Exceptions
+## 5. Exceptions
 
 ### Handling Uncaught Exceptions with winston
 
@@ -326,7 +326,7 @@ The `exitOnError` option can also be a function to prevent exit on only certain 
   logger.exitOnError = ignoreEpipe;
 ```
 
-## Logging Levels
+## 6. Logging Levels
 
 ### Using Logging Levels
 Setting the level for your logging message can be accomplished in one of two ways. You can pass a string representing the logging level to the log() method or use the level specified methods defined on every winston Logger.
@@ -435,7 +435,7 @@ Although there is slight repetition in this data structure, it enables simple en
 
 This enables transports with the 'colorize' option set to appropriately color the output of custom levels.
 
-## Further Reading
+## 7. Further Reading
 
 ### Events and Callbacks in Winston
 Each instance of winston.Logger is also an instance of an [EventEmitter][1]. A log event will be raised each time a transport successfully logs a message:
@@ -655,7 +655,7 @@ info: transaction with card number 123456****2345 successful.
 See [log-filter-test.js](./test/log-filter-test.js), where card number masking
 is implemented as an example.
 
-## Working with Transports
+## 8. Working with Transports
 There are many transports supported by winston core. If you have a transport you would like to add either open an issue or fork and submit a pull request. Commits are welcome, but I'll give you extra street cred if you __add tests too :D__
 
 
@@ -971,7 +971,7 @@ var logger = new (winston.Logger)({
 logger.info('Data to log.');
 ```
 
-### Inspirations
+### 9. Inspirations
 1. [npm][0]
 2. [log.js][4]
 3. [socket.io][5]
@@ -979,7 +979,7 @@ logger.info('Data to log.');
 5. [BigBrother][7]
 6. [Loggly][8]
 
-## Installation
+## 10. Installation
 
 ### Installing npm (node package manager)
 ```
@@ -991,7 +991,7 @@ logger.info('Data to log.');
   [sudo] npm install winston
 ```
 
-## Run Tests
+## 11. Run Tests
 All of the winston tests are written in [vows][9], and designed to be run with npm.
 
 ``` bash
